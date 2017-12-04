@@ -1,0 +1,74 @@
+{% extends "blog/base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<!-- Home Section start -->
+<section id="home" class="scroll-section root-sec grey lighten-5 home-wrap">
+    <div class="sec-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="home-inner">
+                        <div class="align-self-center home-content">
+                            <h1 class="home-title">HI! I'm <span>Haruyasu Kaitori</span></h1>
+                            <h2 class="home-subtitle">FX Pipeline TD in Vancouver, BC, Canada</h2>
+
+                            <div class="embed-responsive embed-responsive-16by9 video-pos">
+                                <iframe src="https://player.vimeo.com/video/181526632" frameborder="0"
+                                        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- #home Section end -->
+
+<!-- About Section start -->
+<section id="about" class="scroll-section root-sec padd-tb-60 grey lighten-5 about-wrap">
+    <div class="container">
+        <div class="about-inner">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="person-about">
+                        <h3 class="about-subtitle">About Me</h3>
+                        <p>
+                            I am an experienced Software Engineer with a good eye for Visual Effects.
+                            Before I came to Vancouver, I had worked as a Software Engineer for 8 years, therefore I
+                            have an extensive knowledge and experience in programming and I am acquiring the
+                            knowledge and techniques of making Visual Effects.
+                        </p>
+                        <a href="https://drive.google.com/open?id=0B9zE_fsWdvYFNlBSU1F2RmdpYmM"
+                           class="btn btn-dark">
+                            <i class="fa d-inline fa-lg fa-cloud-download"> </i>Download Resume</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="person-info">
+                        <h3 class="about-subtitle">Personal Information</h3>
+                        <h5><span>Name :</span> Haruyasu Kaitori</h5>
+                        <h5><span>Address :</span> Vancouver, BC, Canada</h5>
+                        <h5><span>Phone :</span> +1 (778)-710-1648</h5>
+                        <h5><span>Email :</span> haruvfx@gmail.com</h5>
+                        <h5><span>Interests :</span> Film Making, Movies, Hiking, Running</h5>
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="person-img">
+                        <img class="z-depth-1" src="{% static 'img/me.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- #about Section end -->
+
+{% endblock %}

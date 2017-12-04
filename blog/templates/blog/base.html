@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <title>Haruyasu Kaitori</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark2 navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}"><i class="fa d-inline fa-lg fa-code"></i><b> Haru</b></a>
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'career' %}"><i class="fa d-inline fa-lg fa-file-text-o"></i> Career</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'portfolio' %}"><i class="fa d-inline fa-lg fa-film"></i> Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}"><i class="fa d-inline fa-lg fa-envelope-o"></i> Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+
+<!-- Footer Section end -->
+<footer id="footer" class="root-sec footer-color root-sec footer-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="clearfix footer-inner">
+                    <ul class="left social-icons">
+                        <li><a href="https://www.facebook.com/kaitori1124" class="tooltips tooltipped facebook"
+                               data-position="top" data-delay="50" data-tooltip="Facebook"><i
+                                class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/haruyasu-kaitori-1b5436105"
+                               class="tooltips tooltipped linkedin" data-position="top" data-delay="50"
+                               data-tooltip="Linkdin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://twitter.com/hathle" class="tooltips tooltipped twitter"
+                               data-position="top" data-delay="50" data-tooltip="Twitter"><i
+                                class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/hathle/" class="tooltips tooltipped instagram"
+                               data-position="top" data-delay="50" data-tooltip="Instagram"><i
+                                class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://plus.google.com/u/0/112789630258118860958"
+                               class="tooltips tooltipped google-plus" data-position="top" data-delay="50"
+                               data-tooltip="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                    <div class="right copyright">
+                        <p>Haruyasu Kaitori &copy; All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
