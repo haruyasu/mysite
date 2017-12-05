@@ -78,7 +78,7 @@ a {
 }
 
 .about-inner {
-    margin: 60px 0;
+    padding: 60px 0;
 }
 
 .person-about .title {
@@ -164,6 +164,18 @@ a {
 
 .z-depth-1 {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* --------------------------------- */
+/* 14. Career Styles
+ ----------------------------------- */
+
+.portfolio-title {
+    padding: 10px;
+}
+
+.pic {
+    padding-bottom: 3rem;
 }
 
 /* --------------------------------- */

@@ -21,9 +21,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'portfolio' %}"><i class="fa d-inline fa-lg fa-film"></i> Portfolio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}"><i class="fa d-inline fa-lg fa-envelope-o"></i> Contact</a>
-                </li>
             </ul>
         </div>
     </div>
@@ -33,37 +30,41 @@
 
 {% endblock %}
 
-<!-- Footer Section end -->
-<footer id="footer" class="root-sec footer-color root-sec footer-wrap">
+  <!-- Footer -->
+  <footer class="footer-color text-md-left text-center p-4 text-light">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="clearfix footer-inner">
-                    <ul class="left social-icons">
-                        <li><a href="https://www.facebook.com/kaitori1124" class="tooltips tooltipped facebook"
-                               data-position="top" data-delay="50" data-tooltip="Facebook"><i
-                                class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/haruyasu-kaitori-1b5436105"
-                               class="tooltips tooltipped linkedin" data-position="top" data-delay="50"
-                               data-tooltip="Linkdin"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="https://twitter.com/hathle" class="tooltips tooltipped twitter"
-                               data-position="top" data-delay="50" data-tooltip="Twitter"><i
-                                class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/hathle/" class="tooltips tooltipped instagram"
-                               data-position="top" data-delay="50" data-tooltip="Instagram"><i
-                                class="fa fa-instagram"></i></a></li>
-                        <li><a href="https://plus.google.com/u/0/112789630258118860958"
-                               class="tooltips tooltipped google-plus" data-position="top" data-delay="50"
-                               data-tooltip="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                    <div class="right copyright">
-                        <p>Haruyasu Kaitori &copy; All Rights Reserved</p>
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+
+        <div class="my-3 col-lg-6">
+          <h3>Contact me</h3>
+          <form>
+            <fieldset class="form-group my-3">
+              <input type="email" class="form-control" id="Input Email" placeholder="Email"> </fieldset>
+            <fieldset class="form-group my-3">
+              <input type="message" class="form-control" id="Input Message" placeholder="Message"> </fieldset>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+          </form>
         </div>
+        <div class="col-lg-1">
+
+        </div>
+        <div class="my-3 col-lg-5">
+          <h3>Social</h3>
+          <a class="tooltips tooltipped facebook" href="https://www.facebook.com/haruyasu11" target="blank"><i class="fa fa-facebook-square text-muted fa-3x m-2"></i></a>
+          <a class="tooltips tooltipped linkedin" href="https://www.linkedin.com/in/haruyasu-kaitori-1b5436105" target="blank"><i class="fa fa-linkedin-square text-muted fa-3x m-2"></i></a>
+          <a class="tooltips tooltipped twitter" href="https://twitter.com/hathle" target="blank"><i class="fa fa-3x fa-twitter m-2 text-muted"></i></a>
+          <a class="tooltips tooltipped instagram" href="https://www.instagram.com/hathle/" target="blank"><i class="fa fa-3x fa-instagram text-muted m-2"></i></a>
+          <a class="tooltips tooltipped google-plus" href="https://plus.google.com/u/0/112789630258118860958" target="blank"><i class="fa fa-3x fa-google-plus-official text-muted m-2"></i></a>
+          <a class="tooltips tooltipped youtube" href="https://www.youtube.com/channel/UCZuXAYjUBwR8I0sdvnPGmmg" target="blank"><i class="fa fa-3x text-muted fa-youtube-play m-2"></i></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-muted text-center">© Copyright 2018 Haruyasu Kaitori - All rights reserved. </p>
+        </div>
+      </div>
     </div>
-</footer>
+  </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
