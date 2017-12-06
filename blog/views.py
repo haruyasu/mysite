@@ -11,8 +11,8 @@ from django.views.generic import (TemplateView, ListView, DetailView, CreateView
 class HomePage(TemplateView):
     template_name = 'index.html'
 
-class CareerView(TemplateView):
-    template_name = 'career.html'
+class SkillsView(TemplateView):
+    template_name = 'skills.html'
 
 class PortfolioView(TemplateView):
     template_name = 'portfolio.html'
