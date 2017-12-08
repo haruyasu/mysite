@@ -7,6 +7,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
 from django.views.generic.edit import FormView
+from django.core.mail import send_mail
+from django.conf import settings
+
 # Create your views here.
 
 class HomePage(TemplateView):
@@ -21,17 +24,9 @@ class PortfolioView(TemplateView):
 class ContactView(TemplateView):
     template_name = 'contact.html'
 
-class ContactView(FormView):
-    template_name = 'form_page.html'
-    form_class = ContactForm
-    success_url = '/contact/'
-
-    def form_valid(self, form):
-        form.send_email()
-        return super(ContactView, self).form_valid(form)
-
 def form_name_view(request):
     form = FormName
+
     if request.method == 'POST':
         form = FormName(request.POST)
 
@@ -39,7 +34,9 @@ def form_name_view(request):
             print("VALIDATION SUCCESS!")
             print("NAME: "+form.cleaned_data['name'])
             print("EMAIL: "+form.cleaned_data['email'])
-            print("TEXT: "+form.cleaned_data['text'])
+            print("MESSAGE: "+form.cleaned_data['message'])
+
+            ContactForm.send_email(form)
 
     return render(request, 'form_page.html', {'form':form})
 

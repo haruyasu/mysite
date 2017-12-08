@@ -10,17 +10,16 @@ class ContactForm(forms.Form):
 
     def send_email(self):
         subject = self.cleaned_data['name']
-        message = self.cleaned_data['message']
+        message = self.cleaned_data['message'] + self.cleaned_data['email']
         from_email = settings.EMAIL_HOST_USER
         to = [settings.EMAIL_HOST_USER]
 
         send_mail(subject, message, from_email, to)
 
-
 class FormName(forms.Form):
     name = forms.CharField()
     email = forms.EmailField()
-    text = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(widget=forms.Textarea)
     botcatcher = forms.CharField(required=False, widget=forms.HiddenInput, validators=[validators.MaxLengthValidator(0)])
 
     def clean(self):
