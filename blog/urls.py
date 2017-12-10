@@ -5,11 +5,14 @@ urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r'^skills/$', views.SkillsView.as_view(), name='skills'),
     url(r'^portfolio/$', views.PortfolioView.as_view(), name='portfolio'),
-    url(r'^contact/$', views.ContactView.as_view(), name='contact'),
 
-    url(r'^about/$', views.AboutView.as_view(), name='about'),
 
-    url(r'^$', views.PostListView.as_view(), name='post_list'),
+    # url(r'^contact/$', views.ContactView.as_view(), name='contact'),
+
+    # url(r'^about/$', views.AboutView.as_view(), name='about'),
+
+    # url(r'^$', views.PostListView.as_view(), name='post_list'),
+    url(r'^blog/$', views.PostListView.as_view(), name='post_list'),
     url(r'^post/(?P<pk>\d+)$', views.PostDetailView.as_view(), name='post_detail'),
     url(r'^post/new/$', views.CreatePostView.as_view(), name='post_new'),
     url(r'^post/(?P<pk>\d+)/edit/$', views.PostUpdateView.as_view(), name='post_edit'),

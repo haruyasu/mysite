@@ -8,33 +8,66 @@
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css"
+          type="text/css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/master.css' %}">
 </head>
-<body>
-<nav class="navbar navbar-expand-md bg-dark2 navbar-dark">
-    <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}"><i class="fa d-inline fa-lg fa-code"></i><b> HARU VFX</b></a>
-        <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'skills' %}"><i class="fa d-inline fa-lg fa-file-text-o"></i>
-                        Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'portfolio' %}"><i class="fa d-inline fa-lg fa-film"></i> Portfolio</a>
-                </li>
-            </ul>
+<body class="bg-light">
+<div class="wrap">
+    <nav class="navbar navbar-expand-md bg-dark2 navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}"><i class="fa d-inline fa-lg fa-code"></i><b> HARU
+                VFX</b></a>
+            <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'skills' %}"><i class="fa d-inline fa-lg fa-file-text-o"></i>
+                            Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'portfolio' %}"><i class="fa d-inline fa-lg fa-film"></i>
+                            Portfolio</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'post_list' %}"><i class="fa d-inline fa-lg fa-rss"></i>
+                                Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'post_new' %}"><i
+                                    class="fa d-inline fa-lg fa-file-text-o"></i> New
+                                Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'post_draft_list' %}"><i
+                                    class="fa d-inline fa-lg fa-sticky-note-o"></i>
+                                Drafts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa d-inline fa-lg fa-sign-out"></i>
+                                Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}"><i
+                                    class="fa d-inline fa-lg fa-user-circle-o"></i></a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-{% block content %}
+    {% block content %}
 
-{% endblock %}
+    {% endblock %}
+
+</div>
 
 <!-- Footer -->
-<footer class="footer-color text-md-left text-center p-4 text-light">
+<footer class="footer footer-color text-md-left text-center p-4 text-light">
     <div class="container">
         <div class="row">
             <div class="my-3 col-lg-6">
@@ -59,7 +92,8 @@
             <div class="my-3 col-lg-4 text-left">
                 <h3>Contact me</h3>
                 <p class="m-0 text-muted">Tel : +1 (778)-710-1648</p>
-                <p class="text-muted">Email : <a href="mailto:haruvfx@gmail.com" class="text-muted">haruvfx@gmail.com</a></p>
+                <p class="text-muted">Email : <a href="mailto:haruvfx@gmail.com"
+                                                 class="text-muted">haruvfx@gmail.com</a></p>
             </div>
 
 
