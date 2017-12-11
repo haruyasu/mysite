@@ -27,7 +27,11 @@
             {% for post in post_list %}
                 <!-- Blog Post -->
                 <div class="card mb-4">
-                    <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+                    {% if post.image %}
+                        <a href="{% url 'post_detail' pk=post.pk %}">
+                        <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                        </a>
+                    {% endif %}
                     <div class="card-body">
                         <h2 class="card-title">{{ post.title }}</h2>
 {#                        <p class="card-text post">{{ post.text|safe|linebreaksbr }}</p>#}
@@ -73,14 +77,14 @@
                         <div class="col-lg-6">
                             <ul class="list-unstyled mb-0">
                                 <li>
-                                    <a href="#">Houdini</a>
+                                    Houdini
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <ul class="list-unstyled mb-0">
                                 <li>
-                                    <a href="#">Python</a>
+                                    Python
                                 </li>
                             </ul>
                         </div>
@@ -89,12 +93,12 @@
             </div>
 
             <!-- Side Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Side Widget</h5>
-                <div class="card-body">
-                    Test Side Widget!!
-                </div>
-            </div>
+{#            <div class="card my-4">#}
+{#                <h5 class="card-header">Side Widget</h5>#}
+{#                <div class="card-body">#}
+{#                    Test Side Widget!!#}
+{#                </div>#}
+{#            </div>#}
         </div>
     </div>
     <!-- /.row -->
