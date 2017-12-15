@@ -7,7 +7,21 @@
         {{ form.as_p }}
         <button type="submit" class='save btn btn-dark'>Save</button>
     </form>
-    {#    <script>#}
-    {#        var editor = new MediumEditor('.editable');#}
-    {#    </script>#}
+    <script>
+        var editor = new MediumEditor('.editable', {
+            toolbar: {
+                buttons: ["customHtml", 'bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'image', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'superscript', 'subscript', 'orderedlist', 'unorderedlist', 'pre', 'removeFormat', 'outdent', 'indent', 'h1', 'h2', 'h3', 'html'],
+            },
+            extensions: {
+                "customHtml": new CustomHtml({
+                    buttonText: "<img>"
+                    , htmlToInsert: "<i class='someclass'>"
+                })
+            },
+            buttonLabels: 'fontawesome',
+            anchor: {
+                targetCheckbox: true
+            }
+        });
+    </script>
 {% endblock %}
