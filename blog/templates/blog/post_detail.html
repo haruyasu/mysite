@@ -89,7 +89,12 @@
                     <a class='btn btn-dark' href="{% url 'post_remove' pk=post.pk %}">
                         <span class='fa fa-eraser'> Remove</span>
                     </a>
+                    <br>
+                    <br>
                 {% endif %}
+                <a class='btn btn-dark' href="{% url 'post_list' %}">
+                    &larr; Back
+                </a>
             </div>
         </div>
 
@@ -133,12 +138,12 @@
             </div>
 
             <!-- Side Widget -->
-{#            <div class="card my-4">#}
-{#                <h5 class="card-header">Side Widget</h5>#}
-{#                <div class="card-body">#}
-{#                    Test Side Widget!!#}
-{#                </div>#}
-{#            </div>#}
+            {#            <div class="card my-4">#}
+            {#                <h5 class="card-header">Side Widget</h5>#}
+            {#                <div class="card-body">#}
+            {#                    Test Side Widget!!#}
+            {#                </div>#}
+            {#            </div>#}
 
         </div>
 
