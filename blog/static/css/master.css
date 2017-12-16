@@ -211,6 +211,10 @@ body {
     height: 100px;
 }
 
+.tool {
+    font-size: 0.8em;
+}
+
 .footer-color {
     background-color: #333333;
 }
