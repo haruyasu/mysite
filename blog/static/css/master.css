@@ -126,7 +126,7 @@ body {
 }
 
 .person-about p {
-    /*color: #727272;*/
+    color: #727272;
     /*font-size: 16px;*/
     /*line-height: 28px;*/
     margin-bottom: 35px;
@@ -142,7 +142,7 @@ body {
 
 .person-info p {
     border-bottom: 1px solid #eeeeee;
-    /*color: #727272;*/
+    color: #727272;
     /*font-size: 17px;*/
     /*margin-bottom: 12px;*/
     /*padding-bottom: 12px;*/
