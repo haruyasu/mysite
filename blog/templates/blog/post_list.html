@@ -29,12 +29,12 @@
                 <div class="card mb-4">
                     {% if post.image %}
                         <a href="{% url 'post_detail' pk=post.pk %}">
-                        <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
                         </a>
                     {% endif %}
                     <div class="card-body">
                         <h2 class="card-title">{{ post.title }}</h2>
-{#                        <p class="card-text post">{{ post.text|safe|linebreaksbr }}</p>#}
+                        {#                        <p class="card-text post">{{ post.text|safe|linebreaksbr }}</p>#}
                         <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-dark">Read &rarr;</a>
                     </div>
                     <div class="card-footer text-muted">
@@ -44,14 +44,36 @@
             {% endfor %}
 
             <!-- Pagination -->
-{#            <ul class="pagination justify-content-center mb-4">#}
-{#                <li class="page-item">#}
-{#                    <a class="page-link" href="#">&larr; Older</a>#}
-{#                </li>#}
-{#                <li class="page-item disabled">#}
-{#                    <a class="page-link" href="#">Newer &rarr;</a>#}
-{#                </li>#}
-{#            </ul>#}
+            {% if is_paginated %}
+                <nav class="my-4">
+                    <ul class="pagination pagination-circle pg-darkgrey justify-content-center mb-0">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+                            </li>
+                        {% endif %}
+
+                        {% for link_page in page_obj.paginator.page_range %}
+                            {% if link_page == page_obj.number %}
+                                <li class=" page-item active">
+                                    <a class="page-link" href="#" tabindex="-1">{{ link_page }}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ link_page }}">{{ link_page }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+            <!-- Pagination -->
         </div>
 
         <!-- Sidebar Widgets Column -->
@@ -93,12 +115,12 @@
             </div>
 
             <!-- Side Widget -->
-{#            <div class="card my-4">#}
-{#                <h5 class="card-header">Side Widget</h5>#}
-{#                <div class="card-body">#}
-{#                    Test Side Widget!!#}
-{#                </div>#}
-{#            </div>#}
+            {#            <div class="card my-4">#}
+            {#                <h5 class="card-header">Side Widget</h5>#}
+            {#                <div class="card-body">#}
+            {#                    Test Side Widget!!#}
+            {#                </div>#}
+            {#            </div>#}
         </div>
     </div>
     <!-- /.row -->

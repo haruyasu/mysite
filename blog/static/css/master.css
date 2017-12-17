@@ -133,11 +133,11 @@ body {
 }
 
 /*.person-info h5 {*/
-    /*border-bottom: 1px solid #eeeeee;*/
-    /*color: #727272;*/
-    /*font-size: 17px;*/
-    /*margin-bottom: 12px;*/
-    /*padding-bottom: 12px;*/
+/*border-bottom: 1px solid #eeeeee;*/
+/*color: #727272;*/
+/*font-size: 17px;*/
+/*margin-bottom: 12px;*/
+/*padding-bottom: 12px;*/
 /*}*/
 
 .person-info p {
@@ -445,7 +445,6 @@ pre {
     color: #666;
 }
 
-
 blockquote {
     display: block;
     padding-left: 20px;
@@ -456,10 +455,93 @@ blockquote {
     color: #555;
 }
 
-.editable
- {
+.editable {
     outline: none;
     margin: 0 0 20px 0;
     padding: 0 0 20px 0;
     border-bottom: 1px solid #dbdbdb;
+}
+
+/* --------------------------------- */
+/* Paginator
+ ----------------------------------- */
+.pagination .page-link {
+    background-color: transparent;
+    font-size: 0.9rem;
+}
+
+.pagination .page-link {
+    color: #3b5998;
+}
+
+.pagination .active .page-link {
+    border-radius: 2px;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.pagination .active .page-link:hover {
+    color: #fff;
+}
+
+.pagination.pagination-circle .page-link {
+    border-radius: 50%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.pagination.pagination-circle .page-link:hover {
+    border-radius: 50%;
+}
+
+.pagination.pagination-circle .active .page-link {
+    border-radius: 50%;
+}
+
+.pagination .page-link {
+    border: 0;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.pagination .page-link:hover {
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    background-color: #eee;
+}
+
+.pagination .page-link:focus {
+    background-color: transparent;
+}
+
+.pagination.pg-blue .active .page-link {
+    background-color: #4285F4;
+}
+
+.pagination.pg-red .active .page-link {
+    background-color: #ff3547;
+}
+
+.pagination.pg-teal .active .page-link {
+    background-color: #2BBBAD;
+}
+
+.pagination.pg-darkgrey .active .page-link {
+    background-color: #37474F;
+}
+
+.pagination.pg-dark .active .page-link {
+    background-color: #2E2E2E;
+}
+
+.pagination.pg-bluegrey .active .page-link {
+    background-color: #3F729B;
+}
+
+.pagination.pg-amber .active .page-link {
+    background-color: #ff6f00;
+}
+
+.pagination.pg-purple .active .page-link {
+    background-color: #5e35b1;
 }
