@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
-import os
+import os, socket
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,8 +23,11 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'blog/templates/blog')
 SECRET_KEY = '*7u8uip!oajp=*+y&y+%qyz+#$uhutrm&_(i!y2t9l6q__6k^)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+if socket.gethostname() == '127.0.0.1':
+    DEBUG = True
+else:
+    DEBUG = False
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
