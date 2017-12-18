@@ -27,6 +27,7 @@ if socket.gethostname() == 'www.haruvfx.com':
     DEBUG = False
 else:
     DEBUG = False
+    # DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
