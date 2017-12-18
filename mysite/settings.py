@@ -26,7 +26,7 @@ SECRET_KEY = '*7u8uip!oajp=*+y&y+%qyz+#$uhutrm&_(i!y2t9l6q__6k^)'
 if socket.gethostname() == 'www.haruvfx.com':
     DEBUG = False
 else:
-    DEBUG = True
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
