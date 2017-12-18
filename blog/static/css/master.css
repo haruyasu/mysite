@@ -436,13 +436,13 @@ mark {
 }
 
 pre {
-    font-family: 'Menlo', monospace;
-    font-size: 15px;
+    /*font-family: 'Menlo', monospace;*/
+    /*font-size: 15px;*/
     background-color: #f0f0f0;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    color: #666;
+    /*color: #666;*/
 }
 
 blockquote {

@@ -26,10 +26,7 @@ urlpatterns = [
     # url(r'^formpage/', views.form_name_view, name='form_name'),
     url(r'accounts/login/$', views.login, name='login'),
     url(r'accounts/logout/$', views.logout, name='logout', kwargs={'next_page':'/'})
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
 #     import debug_toolbar
