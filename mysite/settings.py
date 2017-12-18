@@ -23,7 +23,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'blog/templates/blog')
 SECRET_KEY = '*7u8uip!oajp=*+y&y+%qyz+#$uhutrm&_(i!y2t9l6q__6k^)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if socket.gethostname() == 'haruvfx.com':
+if socket.gethostname() == 'www.haruvfx.com':
     DEBUG = False
 else:
     DEBUG = True
