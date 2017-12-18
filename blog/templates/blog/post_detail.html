@@ -1,53 +1,7 @@
 {% extends "blog/blog.html" %}
 {% load staticfiles %}
 {% block content_post %}
-    {#    <h1 class="posttitle loader">{{ post.title }}</h1>#}
-    {#    {% if post.published_date %}#}
-    {#        <div class="date postdate">#}
-    {#            {{ post.published_date }}#}
-    {#        </div>#}
-    {#    {% else %}#}
-    {#        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>#}
-    {#    {% endif %}#}
-    {#    <p class='postcontent'>{{ post.text|safe|linebreaksbr }}</p>#}
-    {##}
-    {#    {% if user.is_authenticated %}#}
-    {#        <a class='btn btn-primary' href="{% url 'post_edit' pk=post.pk %}">#}
-    {#            <span class='glyphicon glyphicon-pencil'>Edit</span>#}
-    {#        </a>#}
-    {#        <a class='btn btn-primary' href="{% url 'post_remove' pk=post.pk %}">#}
-    {#            <span class='glyphicon glyphicon-remove'>Remove</span>#}
-    {#        </a>#}
-    {#    {% endif %}#}
-
-    {#    <hr>#}
-    {#    <a class='btn btn-primary btn-comment' href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>#}
-
-    {#    <div class="container">#}
-    {#        {% for comment in post.comments.all %}#}
-    {#            <br>#}
-    {#            {% if user.is_authenticated or comment.approve_comment %}#}
-    {#                {{ comment.created_date }}#}
-    {#                {% if not comment.approve_comment %}#}
-    {#                    <a class='btn btn-default' href="{% url 'comment_remove' pk=comment.pk %}">#}
-    {#                        <span class='glyphicon glyphicon-remove'>Remove</span>#}
-    {#                    </a>#}
-    {#                    <a class='btn btn-primary' href="{% url 'comment_approve' pk=comment.pk %}">#}
-    {#                        <span class='glyphicon glyphicon-ok'>OK</span>#}
-    {#                    </a>#}
-    {#                {% endif %}#}
-    {##}
-    {#                <p>{{ comment.text|safe|linebreaks }}</p>#}
-    {#                <p>Posted By: {{ comment.author }}</p>#}
-    {#            {% endif %}#}
-    {#        {% empty %}#}
-    {#            <p>No Comment</p>#}
-    {#        {% endfor %}#}
-    {#    </div>#}
-
-
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-8">
             <!-- Title -->
@@ -108,7 +62,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
+                  <button class="btn btn-dark" type="button">Go!</button>
                 </span>
                     </div>
                 </div>
@@ -119,20 +73,17 @@
                 <h5 class="card-header">Categories</h5>
                 <div class="card-body">
                     <div class="row">
+                        {% for category in categories %}
                         <div class="col-lg-6">
-                            <ul class="list-unstyled mb-0">
+                            <ul class="list-unstyled mb-3">
                                 <li>
-                                    Houdini
+                                    <a class="btn btn-dark" href="{% url 'category' category.name %}">
+                                        {{ category.name }}
+                                    </a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    Python
-                                </li>
-                            </ul>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

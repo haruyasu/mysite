@@ -1,14 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from blog.models import Post, Comment
+from blog.models import Post, Comment, Category
 from blog.forms import PostForm, CommentForm, FormName, ContactForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
-from django.views.generic.edit import FormView
-from django.core.mail import send_mail
-from django.conf import settings
 
 # Create your views here.
 
@@ -40,8 +37,8 @@ def form_name_view(request):
 
     return render(request, 'form_page.html', {'form':form})
 
-class AboutView(TemplateView):
-    template_name = 'about.html'
+# class AboutView(TemplateView):
+#     template_name = 'about.html'
 
 class PostListView(ListView):
     model = Post
@@ -50,8 +47,18 @@ class PostListView(ListView):
     def get_queryset(self):
         return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['categories'] = Category.objects.all()
+        return context
+
 class PostDetailView(DetailView):
     model = Post
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['categories'] = Category.objects.all()
+        return context
 
 class CreatePostView(LoginRequiredMixin, CreateView):
     login_url = '/login/'
@@ -76,6 +83,20 @@ class DraftListView(LoginRequiredMixin, ListView):
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('post_list')
+
+class CategoryView(ListView):
+    model = Post
+
+    def get_queryset(self):
+        category_name = self.kwargs['category']
+        self.category = Category.objects.get(name=category_name)
+        queryset = super().get_queryset().filter(category=self.category, published_date__lte=timezone.now()).order_by('-published_date')
+        return queryset
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['categories'] = Category.objects.all()
+        return context
 
 #######
 #######
