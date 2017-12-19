@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
+from django.db.models import Q
 
 # Create your views here.
 
@@ -40,12 +41,24 @@ def form_name_view(request):
 # class AboutView(TemplateView):
 #     template_name = 'about.html'
 
-class PostListView(ListView):
-    model = Post
+class BaseListView(ListView):
     paginate_by = 3
 
+    def base_queryset(self):
+        queryset = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+        return queryset
+
+class PostListView(BaseListView):
+    model = Post
+
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+        queryset = self.base_queryset()
+        keyword = self.request.GET.get("keyword")
+        if keyword:
+            queryset = queryset.filter(
+                Q(title__icontains=keyword) | Q(text__icontains=keyword))
+
+        return queryset
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
