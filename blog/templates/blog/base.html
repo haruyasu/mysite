@@ -13,7 +13,6 @@
           type="text/css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/master.css' %}">
-    <link rel="stylesheet" href="{% static 'css/prettify.css' %}">
 
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -133,6 +132,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
         integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+<script>
+    $(function () {
+        $("pre").addClass("prettyprint linenums");
+        function init(event) {
+            prettyPrint();
+        }
+
+        if (window.addEventListener) window.addEventListener("load", init, false);
+        else if (window.attachEvent) window.attachEvent("onload", init);
+    });
+</script>
+
 </body>
 </html>
