@@ -1,5 +1,6 @@
 {% extends "blog/blog.html" %}
 {% load staticfiles %}
+{% load blogfilter %}
 {% block content_post %}
     <div class="row">
         <!-- Post Content Column -->
@@ -7,17 +8,17 @@
             <!-- Title -->
             <h1 class="mt-4">{{ post.title }}</h1>
 
-            <!-- Author -->
-            <p class="lead">
-                by Haru
-            </p>
+{#            <!-- Author -->#}
+{#            <p class="lead">#}
+{#                by Haru#}
+{#            </p>#}
 
             <hr>
 
             <!-- Date/Time -->
             {% if post.published_date %}
-                <div class="date postdate">
-                    <p>Posted on {{ post.published_date }}</p>
+                <div class="date postdate text-muted">
+                    <p>Posted on {% by_the_time post.published_date %}</p>
                 </div>
             {% else %}
                 <a class="btn btn-success" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
