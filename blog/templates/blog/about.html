@@ -1,0 +1,127 @@
+{% extends "blog/base.html" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="py-5 bg-light">
+
+
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h3 class="mb-4">About Me</h3>
+                        <p>
+                            My name is Haruyasu Kaitori. I am a FX Pipeline TD in Vancouver. I am an experienced
+                            Software Engineer with a good eye for Visual Effects. I have worked as a Software Engineer
+                            for 8 years, I have an extensive knowledge and experience in programming and I am acquiring
+                            the knowledge and techniques of making Visual Effects.
+                        </p>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="timeline">
+                            <li>
+                                <div class="timeline-image">
+                                    <img class="rounded-circle img-fluid" src="{% static 'img/meijo.png' %}">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h5>2004-2008</h5>
+                                        <h5 class="subheading">Meijo University</h5>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">
+                                            Bachelor of Science, Mathematics, OpenGL, Faculty of Science and Technology
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image">
+                                    <img class="rounded-circle img-fluid" src="{% static 'img/fuji.png' %}">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h5>2008-2011</h5>
+                                        <h5 class="subheading">Software Engineer</h5>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">
+                                            Developed the part of the radio of a car navigation
+                                            system of the model in 2011. Provided user requirements analysis, design and
+                                            programming support. Meeting with clients to discuss for the car navigation
+                                            system.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-image">
+                                    <img class="rounded-circle img-fluid" src="{% static 'img/fuji.png' %}">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h5>2011-2015</h5>
+                                        <h5 class="subheading">R&D Software Engineer</h5>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">
+                                            Developed high-quality AUTOSAR platform of automotive. Researched real-time
+                                            operating systems for automotive embedded systems and functional safety.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image">
+                                    <img class="rounded-circle img-fluid" src="{% static 'img/fuji.png' %}">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h5>2015-2016</h5>
+                                        <h5 class="subheading">Lead Software Engineer</h5>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">
+                                            I managed a team of 5 Software Engineers.Provide technical leadership to
+                                            Software Engineers, developing overall project architecture.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-image">
+                                    <img class="rounded-circle img-fluid" src="{% static 'img/lostboys.png' %}">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h5>2017-2018</h5>
+                                        <h5 class="subheading">Lost Boys - School of Visual Effects</h5>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">
+                                            Effects Technical Director Program. Specialized in the craft of feature film
+                                            simulated phenomenon and effects. Projects - Procedural Geometry, Mantra
+                                            Shading, Crowd Animation, Destruction, Pyro/Fluid
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image">
+                                    <h4>Be Part
+                                        <br>Of My
+                                        <br>Story!</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+{% endblock %}

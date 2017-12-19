@@ -21,7 +21,8 @@
                         <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-dark">Read &rarr;</a>
                     </div>
                     <div class="card-footer text-muted">
-                        Posted on {% by_the_time post.published_date %} by Haru
+                        Posted on {% by_the_time post.published_date %} by
+                        <b><a class="text-muted" href="{% url 'about' %}">Haru</a></b>
                     </div>
                 </div>
             {% endfor %}
@@ -29,10 +30,10 @@
             <!-- Pagination -->
             {% if is_paginated %}
                 <nav class="my-4">
-                    <ul class="pagination pagination-circle pg-darkgrey justify-content-center mb-0">
+                    <ul class=" pagination pagination-circle pg-darkgrey justify-content-center mb-0">
                         {% if page_obj.has_previous %}
                             <li class="page-item">
-                                <a class="page-link" href="?{% url_replace request 'page' page_obj.previous_page_number %}">Previous</a>
+                                <a class="text-muted page-link" href="?{% url_replace request 'page' page_obj.previous_page_number %}">Previous</a>
                             </li>
                         {% endif %}
 
@@ -45,7 +46,7 @@
                                 </li>
                             {% else %}
                                 <li class="page-item">
-                                    <a class="page-link" href="?{% url_replace request 'page' link_page %}">
+                                    <a class="text-muted page-link" href="?{% url_replace request 'page' link_page %}">
                                         {{ link_page }}
                                     </a>
                                 </li>
@@ -54,7 +55,7 @@
 
                         {% if page_obj.has_next %}
                             <li class="page-item">
-                                <a class="page-link" href="?{% url_replace request 'page' page_obj.next_page_number %}">
+                                <a class="text-muted page-link" href="?{% url_replace request 'page' page_obj.next_page_number %}">
                                     Next
                                 </a>
                             </li>

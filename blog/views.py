@@ -19,6 +19,9 @@ class SkillsView(TemplateView):
 class PortfolioView(TemplateView):
     template_name = 'portfolio.html'
 
+class AboutView(TemplateView):
+    template_name = 'about.html'
+
 class BaseListView(ListView):
     paginate_by = 3
 
