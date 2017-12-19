@@ -19,24 +19,24 @@ class SkillsView(TemplateView):
 class PortfolioView(TemplateView):
     template_name = 'portfolio.html'
 
-class ContactView(TemplateView):
-    template_name = 'contact.html'
-
-def form_name_view(request):
-    form = FormName
-
-    if request.method == 'POST':
-        form = FormName(request.POST)
-
-        if form.is_valid():
-            print("VALIDATION SUCCESS!")
-            print("NAME: "+form.cleaned_data['name'])
-            print("EMAIL: "+form.cleaned_data['email'])
-            print("MESSAGE: "+form.cleaned_data['message'])
-
-            ContactForm.send_email(form)
-
-    return render(request, 'form_page.html', {'form':form})
+# class ContactView(TemplateView):
+#     template_name = 'contact.html'
+#
+# def form_name_view(request):
+#     form = FormName
+#
+#     if request.method == 'POST':
+#         form = FormName(request.POST)
+#
+#         if form.is_valid():
+#             print("VALIDATION SUCCESS!")
+#             print("NAME: "+form.cleaned_data['name'])
+#             print("EMAIL: "+form.cleaned_data['email'])
+#             print("MESSAGE: "+form.cleaned_data['message'])
+#
+#             ContactForm.send_email(form)
+#
+#     return render(request, 'form_page.html', {'form':form})
 
 # class AboutView(TemplateView):
 #     template_name = 'about.html'
@@ -97,13 +97,14 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('post_list')
 
-class CategoryView(ListView):
+class CategoryView(BaseListView):
     model = Post
 
     def get_queryset(self):
+        queryset = self.base_queryset()
         category_name = self.kwargs['category']
         self.category = Category.objects.get(name=category_name)
-        queryset = super().get_queryset().filter(category=self.category, published_date__lte=timezone.now()).order_by('-published_date')
+        queryset = queryset.filter(category=self.category)
         return queryset
 
     def get_context_data(self, *args, **kwargs):
