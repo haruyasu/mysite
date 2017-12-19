@@ -19,12 +19,12 @@
 
             <hr>
 
-            <!-- Preview Image -->
-            {% if post.image %}
-                <div class="image_detail">
-                    <img class="rounded" src="{{ post.image.url }}" alt="">
-                </div>
-            {% endif %}
+{#            <!-- Preview Image -->#}
+{#            {% if post.image %}#}
+{#                <div class="image_detail">#}
+{#                    <img class="rounded" src="{{ post.image.url }}" alt="">#}
+{#                </div>#}
+{#            {% endif %}#}
 
             <!-- Post Content -->
             <p>{{ post.text|safe|linebreaksbr }}</p>
