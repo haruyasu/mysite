@@ -3,11 +3,8 @@
 
     <div class="login-container">
         <div id="output"></div>
-        {#            <div class="avatar"></div>#}
         <div class="form-box">
             <form action="{% url 'login' %}" method="POST">
-                {#                    <input name="user" type="text" placeholder="username">#}
-                {#                    <input type="password" placeholder="password">#}
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button class="btn btn-dark btn-block login" type="submit">Login</button>

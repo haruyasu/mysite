@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from blog.models import Post, Comment, Category
-from blog.forms import PostForm, CommentForm, FormName, ContactForm
+from blog.forms import PostForm, CommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -18,28 +18,6 @@ class SkillsView(TemplateView):
 
 class PortfolioView(TemplateView):
     template_name = 'portfolio.html'
-
-# class ContactView(TemplateView):
-#     template_name = 'contact.html'
-#
-# def form_name_view(request):
-#     form = FormName
-#
-#     if request.method == 'POST':
-#         form = FormName(request.POST)
-#
-#         if form.is_valid():
-#             print("VALIDATION SUCCESS!")
-#             print("NAME: "+form.cleaned_data['name'])
-#             print("EMAIL: "+form.cleaned_data['email'])
-#             print("MESSAGE: "+form.cleaned_data['message'])
-#
-#             ContactForm.send_email(form)
-#
-#     return render(request, 'form_page.html', {'form':form})
-
-# class AboutView(TemplateView):
-#     template_name = 'about.html'
 
 class BaseListView(ListView):
     paginate_by = 3
@@ -112,7 +90,6 @@ class CategoryView(BaseListView):
         context['categories'] = Category.objects.all()
         return context
 
-#######
 #######
 
 @login_required
