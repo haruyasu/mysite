@@ -10,10 +10,11 @@ html {
 }
 
 body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 .wrap {
