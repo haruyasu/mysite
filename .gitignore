@@ -3,3 +3,5 @@ db.sqlite3
 *.pyc
 __ pycache __
 .DS_Store
+.idea
+*.jade
