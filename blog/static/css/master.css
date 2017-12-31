@@ -771,3 +771,16 @@ blockquote {
         padding: 0 100px 20px 20px
     }
 }
+
+/* --------------------------------- */
+/* Category
+ ----------------------------------- */
+.category-name {
+    display: inline-block;
+    min-width: 60px;
+}
+
+.card-body2 {
+    flex: 1 1 auto;
+    padding: 1.25rem 1.25rem 0 1.25rem;
+}

@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
-from django.db.models import Q
+from django.db.models import Q, Count
 
 # Create your views here.
 
@@ -43,7 +43,8 @@ class PostListView(BaseListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['categories'] = Category.objects.all()
+        # context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.annotate(num_posts=Count('post'))
         return context
 
 class PostDetailView(DetailView):
@@ -90,7 +91,8 @@ class CategoryView(BaseListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['categories'] = Category.objects.all()
+        # context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.annotate(num_posts=Count('post'))
         return context
 
 #######

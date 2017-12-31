@@ -86,14 +86,17 @@
             <!-- Categories Widget -->
             <div class="card my-4">
                 <h5 class="card-header">Categories</h5>
-                <div class="card-body">
+                <div class="card-body2">
                     <div class="row">
                         {% for category in categories %}
                             <div class="col-lg-6">
                                 <ul class="list-unstyled mb-3">
                                     <li>
                                         <a class="btn btn-dark" href="{% url 'category' category.name %}">
-                                            {{ category.name }}
+                                            <div class="category-name">
+                                                {{ category.name }}
+                                            </div>
+                                            <span class="badge badge-light badge-pill">{{ category.num_posts }}</span>
                                         </a>
                                     </li>
                                 </ul>
