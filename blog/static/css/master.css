@@ -777,7 +777,7 @@ blockquote {
  ----------------------------------- */
 .category-name {
     display: inline-block;
-    min-width: 80px;
+    min-width: 70px;
 }
 
 .card-body2 {
