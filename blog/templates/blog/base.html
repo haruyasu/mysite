@@ -11,9 +11,9 @@
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css"
           type="text/css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">#}
     <link rel="stylesheet" href="{% static 'css/master.css' %}">
-
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111092656-1"></script>
@@ -30,43 +30,46 @@
 </head>
 <body class="bg-light">
 <div class="wrap">
-    <nav class="navbar navbar-expand-md bg-dark2 navbar-dark">
+    {#    <nav class="navbar navbar-expand-md bg-dark2 navbar-dark">#}
+    <nav class="navbar navbar-expand-md bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}"><i class="fa d-inline fa-lg fa-code"></i><b> HARU
-                VFX</b></a>
+            <div class="navbar-brand">
+                <a href="{% url 'home' %}"><i class="fa d-inline fa-code"></i> HARU VFX</a>
+            </div>
             <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'skills' %}"><i class="fa d-inline fa-lg fa-file-text-o"></i>
-                            Skills</a>
+                        <a class="nav-link" href="{% url 'skills' %}"><i class="fa d-inline fa-lg fa-address-card"></i>
+                            <span class="nav-item__title">Skills</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'portfolio' %}"><i class="fa d-inline fa-lg fa-briefcase"></i>
+                            <span class="nav-item__title">Portfolio</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'portfolio' %}"><i class="fa d-inline fa-lg fa-film"></i>
-                            Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'post_list' %}"><i class="fa d-inline fa-lg fa-rss"></i>
-                            Blog</a>
+                        <a class="nav-link" href="{% url 'post_list' %}"><i class="fa d-inline fa-lg fa-book"></i>
+                            <span class="nav-item__title">Blog</span></a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'post_new' %}"><i
-                                    class="fa d-inline fa-lg fa-file-text-o"></i> New
-                                Post</a>
+                                    class="fa d-inline fa-lg fa-edit"></i>
+                                <span class="nav-item__title">New Post</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'post_draft_list' %}"><i
-                                    class="fa d-inline fa-lg fa-sticky-note-o"></i>
-                                Drafts</a>
+                                    class="fa d-inline fa-lg fa-archive"></i>
+                                <span class="nav-item__title">Drafts</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa d-inline fa-lg fa-sign-out"></i>
-                                Logout</a>
+                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa d-inline fa-lg fa-sign-out-alt"></i>
+                                <span class="nav-item__title">Logout</span></a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}"><i
-                                    class="fa d-inline fa-lg fa-user-circle-o"></i></a>
+                            <a class="nav-link" href="{% url 'login' %}"><i class="fa d-inline fa-lg fa-user"></i>
+                                <span class="nav-item__title">Login</span></a>
                         </li>
                     {% endif %}
                 </ul>
@@ -75,9 +78,9 @@
     </nav>
 
     <div class="text-dark">
-    {% block content %}
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
     </div>
 </div>
 
@@ -88,22 +91,22 @@
             <div class="my-3 col-lg-6">
                 <h3>Social</h3>
                 <div class="tool">
-                    <a class="tooltips tooltipped facebook" href="https://www.facebook.com/haruyasu11" target="blank"><i
-                            class="fa fa-facebook-square text-muted fa-3x m-2"></i></a>
+                    <a class="tooltips tooltipped facebook" href="https://www.facebook.com/haruyasu11" target="blank">
+                        <i class="fab fa-facebook text-muted fa-3x m-2"></i></a>
                     <a class="tooltips tooltipped linkedin"
                        href="https://www.linkedin.com/in/haruyasu-kaitori-1b5436105"
-                       target="blank"><i class="fa fa-linkedin-square text-muted fa-3x m-2"></i></a>
+                       target="blank"><i class="fab fa-linkedin text-muted fa-3x m-2"></i></a>
                     <a class="tooltips tooltipped github" href="https://github.com/haruyasu" target="blank"><i
-                            class="fa fa-github-square text-muted fa-3x m-2"></i></a>
+                            class="fab fa-github text-muted fa-3x m-2"></i></a>
                     <a class="tooltips tooltipped twitter" href="https://twitter.com/hathle" target="blank"><i
-                            class="fa fa-3x fa-twitter m-2 text-muted"></i></a>
+                            class="fab fa-twitter fa-3x m-2 text-muted"></i></a>
                     <a class="tooltips tooltipped instagram" href="https://www.instagram.com/hathle/" target="blank"><i
-                            class="fa fa-3x fa-instagram text-muted m-2"></i></a>
-{#                    <a class="tooltips tooltipped google-plus" href="https://plus.google.com/u/0/112789630258118860958"#}
-{#                       target="blank"><i class="fa fa-3x fa-google-plus-official text-muted m-2"></i></a>#}
-{#                    <a class="tooltips tooltipped youtube"#}
-{#                       href="https://www.youtube.com/channel/UCZuXAYjUBwR8I0sdvnPGmmg"#}
-{#                       target="blank"><i class="fa fa-3x text-muted fa-youtube-play m-2"></i></a>#}
+                            class="fab fa-instagram text-muted fa-3x m-2"></i></a>
+                    {#                    <a class="tooltips tooltipped google-plus" href="https://plus.google.com/u/0/112789630258118860958"#}
+                    {#                       target="blank"><i class="fa fa-3x fa-google-plus-official text-muted m-2"></i></a>#}
+                    {#                    <a class="tooltips tooltipped youtube"#}
+                    {#                       href="https://www.youtube.com/channel/UCZuXAYjUBwR8I0sdvnPGmmg"#}
+                    {#                       target="blank"><i class="fa fa-3x text-muted fa-youtube-play m-2"></i></a>#}
                 </div>
             </div>
             <div class="my-3 col-lg-2"></div>
@@ -146,3 +149,4 @@
 
 </body>
 </html>
+
