@@ -28,16 +28,20 @@ body {
     background: rgba(0, 0, 0, .8);
 }
 
-.navbar-brand > a {
-    color: #383C42;
-    font-weight: bold;
-    font-size: 1.5em;
-    transition: color 0.3s;
+.navbar-brand {
+    padding: 0 0 0 30px;
 }
 
-.navbar-brand a:hover {
-    color: #727272;
-}
+/*.navbar-brand > a {*/
+    /*color: #383C42;*/
+    /*font-weight: bold;*/
+    /*font-size: 1.5em;*/
+    /*transition: color 0.3s;*/
+/*}*/
+
+/*.navbar-brand a:hover {*/
+    /*color: #727272;*/
+/*}*/
 
 .navbar-nav > li {
     padding: 0 20px;

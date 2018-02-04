@@ -49,11 +49,20 @@
     {#    <nav class="navbar navbar-expand-md bg-dark2 navbar-dark">#}
     <nav class="navbar navbar-expand-md bg-light">
         <div class="container">
-            <div class="navbar-brand">
-                <a href="{% url 'home' %}"><i class="fa d-inline fa-code"></i> HARU VFX</a>
-            </div>
-            <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+{#            <div class="navbar-brand">#}
+{#                <a href="{% url 'home' %}">#}
+{#                    <img src="{% static 'img/logo.png' %}">#}
+{#                </a>#}
+{#                <a href="{% url 'home' %}"><i class="fa d-inline fa-code"></i> HARU VFX</a>#}
+{#            </div>#}
+{#            <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">#}
+            <div class="collapse navbar-collapse text-center justify-content-center" id="navbar2SupportedContent">
                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}"><i class="fa d-inline fa-lg fa-home"></i>
+                            <span class="nav-item__title">Home</span></a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'skills' %}"><i class="fa d-inline fa-lg fa-address-card"></i>
                             <span class="nav-item__title">Skills</span></a>
