@@ -830,3 +830,12 @@ blockquote {
     flex: 1 1 auto;
     padding: 1.25rem 1.25rem 0 1.25rem;
 }
+
+/* --------------------------------- */
+/* Photos
+ ----------------------------------- */
+.insta a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3B3E44;
+}
