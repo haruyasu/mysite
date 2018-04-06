@@ -1,6 +1,8 @@
 import html.parser
 from django import template
 from django.utils import timezone
+from django.template.defaultfilters import stringfilter
+import markdown
 
 register = template.Library()
 html_parser = html.parser.HTMLParser()
@@ -24,3 +26,18 @@ def by_the_time(dt):
         return '{0} minutes ago'.format(minute)
     else:
         return '{0} hours ago'.format(hours)
+
+@register.filter
+@stringfilter
+def markdown2html(value):
+    return markdown.markdown(value, ['fenced_code'])
+
+@register.filter
+@stringfilter
+def markdown2post(value):
+    s = value.replace("#", "")
+    s = s.replace("*", "")
+    s = s.replace("```", "")
+    s = s[:140]
+    s = s + "..."
+    return s

@@ -1,11 +1,12 @@
 {% extends "blog/blog.html" %}
 {% load blogfilter %}
+{% load staticfiles %}
 {% block content_post %}
     <div class="row">
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        <div class="col-md-9">
             <h3 class="my-4">Blog
-                <small>Houdini/Python Tips etc...</small>
+                <small>Python Tips etc...</small>
             </h3>
 
             {% for post in post_list %}
@@ -16,9 +17,11 @@
                             <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
                         </a>
                     {% endif %}
-                    <div class="card-body">
+                    <div class="card-body memo">
                         <h2 class="card-title">{{ post.title }}</h2>
-                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-dark">Read &rarr;</a>
+                        <p>{{ post.text | markdown2post }}</p>
+{#                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-dark">Read More</a>#}
+                        <a href="{% url 'post_detail' pk=post.pk %}">Read More</a>
                     </div>
                     <div class="card-footer text-muted">
                         Posted on {% by_the_time post.published_date %} by
@@ -67,53 +70,80 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-            <!-- Search Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Search</h5>
-                <div class="card-body">
-                    <div class="input-group">
-                        <form action="{% url 'post_list' %}" method="GET" class="form-inline pull-xs-right">
-                            <input class="form-control" type="text" name="keyword" placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-dark" type="submit">Go!</button>
-                            </span>
-                        </form>
+        <div class="col-md-3" id="side">
+
+            <div class="my-4">
+                <h5 class="menu_underh2"><i class="space fas fa-address-card"></i>Profile</h5>
+                <div class="profile-box clearfix">
+                    <div class="profile-left">
+                        <img src="{% static 'img/me.jpg' %}" width="180" height="180">
+                    </div>
+                    <div class="profile-right memo">
+                        <p>I'm Haru. Senior Software Engineer / Pipeline TD in Vancouver.<br>
+                        <a href="{% url 'about' %}">Read More</a></p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Search Widget -->
+            <div class="my-4">
+                <h5 class="menu_underh2"><i class="space fas fa-search"></i>Search</h5>
+                    <div class="input-group">
+{#                        <form action="{% url 'post_list' %}" method="GET" class="form-inline pull-xs-right">#}
+                        <form action="{% url 'post_list' %}" method="GET">
+                            <input class="form-control" type="text" name="keyword" placeholder="Search for...">
+{#                            <span class="input-group-btn">#}
+{#                                <button class="btn btn-dark" type="submit">Go!</button>#}
+{#                            </span>#}
+                        </form>
+                    </div>
             </div>
 
             <!-- Categories Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Categories</h5>
-                <div class="card-body2">
-                    <div class="row">
-                        {% for category in categories %}
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled mb-3">
-                                    <li>
-                                        <a class="btn btn-dark" href="{% url 'category' category.name %}">
-                                            <div class="category-name">
-                                                {{ category.name }}
-                                            </div>
-                                            <span class="badge badge-light badge-pill">{{ category.num_posts }}</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        {% endfor %}
+{#            <div class="card my-4">#}
+            <div class="my-4">
+{#                <h5 class="card-header">Categories</h5>#}
+                <h5 class="menu_underh2"><i class="space fas fa-tags"></i>Categories</h5>
+                    <div id="side">
+                        <ul>
+                            {% for category in categories %}
+                                <li class="cat-item"><a href="{% url 'category' category.name %}" ><i class="space fas fa-code"></i>{{ category.name }}<span class="count">{{ category.num_posts }}</span></a></li>
+                            {% endfor %}
+                        </ul>
+
+{##}
+{#                        {% for category in categories %}#}
+{#                            <div class="col-lg-12">#}
+{#                                <ul class="list-unstyled mb-3">#}
+{#                                    <li>#}
+{#                                        <a class="btn btn-dark" href="{% url 'category' category.name %}">#}
+{#                                            <div class="category-name">#}
+{#                                                {{ category.name }}#}
+{#                                            </div>#}
+{#                                            <span class="badge badge-light badge-pill">{{ category.num_posts }}</span>#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
                     </div>
+            </div>
+
+            <div class="my-4">
+                <h5 class="menu_underh2"><i class="space fas fa-share"></i>Follow Me</h5>
+              <div class="tool">
+                    <a class="tooltips tooltipped facebook" href="https://www.facebook.com/haruyasu11" target="blank">
+                        <i class="fab fa-facebook text-muted fa-3x m-2"></i></a>
+                    <a class="tooltips tooltipped linkedin"
+                       href="https://www.linkedin.com/in/haruyasu-kaitori-1b5436105"
+                       target="blank"><i class="fab fa-linkedin text-muted fa-3x m-2"></i></a>
+                    <a class="tooltips tooltipped github" href="https://github.com/haruyasu" target="blank"><i
+                            class="fab fa-github text-muted fa-3x m-2"></i></a>
+                    <a class="tooltips tooltipped twitter" href="https://twitter.com/hathle" target="blank"><i
+                            class="fab fa-twitter fa-3x m-2 text-muted"></i></a>
                 </div>
             </div>
 
-            <!-- Side Widget -->
-            {#            <div class="card my-4">#}
-            {#                <h5 class="card-header">Side Widget</h5>#}
-            {#                <div class="card-body">#}
-            {#                    Test Side Widget!!#}
-            {#                </div>#}
-            {#            </div>#}
         </div>
     </div>
-    <!-- /.row -->
 {% endblock %}
