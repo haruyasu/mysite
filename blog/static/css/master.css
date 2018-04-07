@@ -590,6 +590,7 @@ blockquote {
 
 #side h5.menu_underh2 {
     padding: 0 0 0 0px;
+    clear: both;
 }
 #side h5 {
     font-size: 18px;
@@ -600,27 +601,14 @@ blockquote {
     margin: 20px 0 10px 0;
     position: relative;
 }
-/*#side h5:before {*/
-    /*content: " ";*/
-    /*width: 20px;*/
-    /*height: 20px;*/
-    /*background: var(--sidemain);*/
-    /*border-radius: 50%;*/
-    /*position: absolute;*/
-    /*bottom: 6px;*/
-    /*left: 0;*/
-/*}*/
-/*#side h5:after {*/
-    /*content: " ";*/
-    /*width: 15px;*/
-    /*height: 15px;*/
-    /*background: var(--sidesub);*/
-    /*border: 2px solid var(--sidesub);*/
-    /*border-radius: 50%;*/
-    /*position: absolute;*/
-    /*bottom: 14px;*/
-    /*left: 10px;*/
-/*}*/
+.ppos {
+    float:left;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
 /* --------------------------------- */
 /* Post Detail
  ----------------------------------- */
