@@ -239,7 +239,34 @@ body {
 .z-depth-1 {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+/* --------------------------------- */
+/* About Img
+ ----------------------------------- */
+.about-img img {
+    /*border: 5px solid #3b5998;*/
+    width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+ }
 
+.image-box {
+      position: relative;
+      z-index: 1;
+}
+.image-box .shadow {
+      -moz-box-shadow: inset 0px 0px 12px rgba(0,0,0,.6);
+      -webkit-box-shadow: inset 0px 0px 12px rgba(0,0,0,.6);
+      box-shadow: inset 0px 0px 12px rgba(0,0,0,.6);
+}
+.image-box .shadow img {
+      position: relative;
+      z-index: -1;
+}
+.about-img-text {
+    font-size: 0.9em;
+    color: #3B3E44;
+}
 /* --------------------------------- */
 /* Career Styles
  ----------------------------------- */
